@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react'
 import './Hero.css'
 
@@ -7,36 +8,37 @@ import hero3 from '../../assets/hero3.webp'
 import hero4 from '../../assets/hero4.jpg'
 import hero5 from '../../assets/hero5.jpg'
 import hero6 from '../../assets/hero6.jpg'
+
 const slides = [
   {
     id: 1,
     src: hero1,
-    alt: 'Srimathi Photography Hero Image 1',
+    alt: 'Saara Photography Hero Image 1',
   },
   {
     id: 2,
     src: hero2,
-    alt: 'Srimathi Photography Hero Image 2',
+    alt: 'Saara Photography Hero Image 2',
   },
   {
     id: 3,
     src: hero3,
-    alt: 'Srimathi Photography Hero Image 3',
+    alt: 'Saara Photography Hero Image 3',
   },
   {
     id: 4,
     src: hero4,
-    alt: 'Srimathi Photography Hero Image 4',
+    alt: 'Saara Photography Hero Image 4',
   },
   {
     id: 5,
     src: hero5,
-    alt: 'Srimathi Photography Hero Image 5',
+    alt: 'Saara Photography Hero Image 5',
   },
   {
     id: 6,
     src: hero6,
-    alt: 'Srimathi Photography Hero Image 6',
+    alt: 'Saara Photography Hero Image 6',
   },
 ]
 
@@ -59,7 +61,10 @@ export default function Hero() {
   const goTo = (i) => {
     setCurrent(i)
     setPaused(true)
-    setTimeout(() => setPaused(false), INTERVAL * 2)
+
+    setTimeout(() => {
+      setPaused(false)
+    }, INTERVAL * 2)
   }
 
   return (
@@ -69,8 +74,8 @@ export default function Hero() {
         {slides.map((slide, i) => (
           <div
             key={slide.id}
-            className={`hero__slide${
-              i === current ? ' hero__slide--active' : ''
+            className={`hero__slide ${
+              i === current ? 'hero__slide--active' : ''
             }`}
             aria-hidden={i !== current}
           >
@@ -93,15 +98,10 @@ export default function Hero() {
           Wedding • Engagement • Couple Sessions
         </p>
 
-<<<<<<< HEAD
         <h1 className="hero__heading">
           Turning Moments
           <br />
           Into Forever
-=======
-        <h1 className="hero-title">
-          SAARA PHOTOGRAPHY
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
         </h1>
 
         <p className="hero__description">
@@ -124,8 +124,8 @@ export default function Hero() {
         {slides.map((slide, i) => (
           <button
             key={slide.id}
-            className={`hero__dot${
-              i === current ? ' hero__dot--active' : ''
+            className={`hero__dot ${
+              i === current ? 'hero__dot--active' : ''
             }`}
             onClick={() => goTo(i)}
             role="tab"
@@ -140,12 +140,6 @@ export default function Hero() {
         <span className="hero__scroll-line" />
       </div>
     </section>
-<<<<<<< HEAD
   )
 }
-=======
-  );
-};
 
-export default Hero;
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
