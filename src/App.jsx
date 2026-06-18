@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
@@ -12,49 +12,37 @@ import FAQ from './components/FreequentQ/faq'
 import Footer from './components/Footer/Footer'
 import Portfolio from './components/Portfolio/Portfolio'
 import ScrollToTop from './components/ScrollToTop'
-
-import './App.css'
 import Floating from './components/Floating/Floating'
 import Packages from './components/Packages/Packages'
+
+import './App.css'
 
 function Home() {
   return (
     <main>
       <Hero />
+
       <About />
-      
+
       <section id="gallery">
-
         <Gallery />
-
       </section>
+
       <Testimonials />
-      <section id="contact">
-       <Packages/>
-        <Contact />
 
+      <section id="contact">
+        <Packages />
+        <Contact />
       </section>
+
       <Instagram />
+
       <FAQ />
-      <Floating/>
+
+      <Floating />
     </main>
   )
 }
-=======
-import "./index.css";
-import Hero from './components/Hero/Hero';
-import StorySection from "./components/StorySection/StorySection";
-import FilmSection from "./components/FilmSection/FlimSection";
-import About from "./components/About/About";
-import Testimonials from "./components/testimonials/Testimonials";
-import Gallery from "./components/Gallery/Gallery";
-import Footer from "./components/footer/footer";
-import Navbar from "./components/Navbar/Navbar";
-import Storytelling from "./components/StoryTelling/StoryTelling";
-import WeddingStory from "./components/WeddingStory/WeddingStory";
-import TenPartNarrative from "./components/TenPartNarrative/TenPartNarrative";
-import FAQ from "./components/FreequentQ/faq";
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
 
 function App() {
   return (
@@ -65,10 +53,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/portfolio" element={<Portfolio />} />
-
-
       </Routes>
 
       <Footer />
@@ -76,8 +61,5 @@ function App() {
   )
 }
 
-<<<<<<< HEAD
 export default App
-=======
-export default App;
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
+
