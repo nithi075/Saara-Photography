@@ -93,10 +93,15 @@ export default function Hero() {
           Wedding • Engagement • Couple Sessions
         </p>
 
+<<<<<<< HEAD
         <h1 className="hero__heading">
           Turning Moments
           <br />
           Into Forever
+=======
+        <h1 className="hero-title">
+          SAARA PHOTOGRAPHY
+>>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
         </h1>
 
         <p className="hero__description">
@@ -135,5 +140,12 @@ export default function Hero() {
         <span className="hero__scroll-line" />
       </div>
     </section>
+<<<<<<< HEAD
   )
 }
+=======
+  );
+};
+
+export default Hero;
+>>>>>>> 4e52e60828768403d50f614b3910154a289eca5e

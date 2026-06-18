@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Footer.css'
 import logo from '../../assets/logo.jpeg' 
@@ -219,3 +220,27 @@ return ( <footer className="footer"> <div className="footer__top">
 
 )
 }
+=======
+import './footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <h2 className="brand-name">SAARA PHOTOGRAPHY</h2>
+        <a href="mailto:hello@saaraphotography.com" className="footer-contact">
+          HELLO@SAARAPHOTOGRAFY.COM
+        </a>
+        <div className="social-links">
+          <a href="#">INSTAGRAM</a>
+          <a href="#">PINTEREST</a>
+          <a href="#">VIMEO</a>
+        </div>
+        <p className="copyright">© 2026 SAARA PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+>>>>>>> 4e52e60828768403d50f614b3910154a289eca5e

@@ -71,6 +71,7 @@ export default function Navbar() {
   }, [location.pathname, location.search])
 
   return (
+<<<<<<< HEAD
     <header
       className={`navbar 
         ${scrolled ? 'navbar--scrolled' : ''} 
@@ -165,6 +166,15 @@ export default function Navbar() {
           <span className="navbar__hamburger-bar" />
           <span className="navbar__hamburger-bar" />
         </button>
+=======
+    <nav className="navbar">
+      <div className="nav-logo">SAARA PHOTOGRAPHY</div>
+      
+      {/* Hamburger Icon */}
+      <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+>>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
       </div>
 
       {/* MOBILE MENU */}

@@ -74,9 +74,57 @@ export default function Gallery() {
   }
 
   return (
+<<<<<<< HEAD
     <section className="gallery" id="gallery" aria-labelledby="gallery-heading">
       <div className="gallery__header">
         <h2 className="gallery__heading" id="gallery-heading">Selected works</h2>
+=======
+
+    <section className="gallery-section">
+
+      <h2 className="section-title">
+        VISUAL NARRATIVES
+      </h2>
+
+      {/* Instagram Link */}
+      <a
+        href="https://www.instagram.com/saaraphotography05/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="insta-link"
+      >
+        @saaraphotography05
+      </a>
+
+      {/* Gallery Grid */}
+      <div className="gallery-grid">
+
+        {images.map((img, i) => (
+
+          <motion.div
+            key={i}
+            className="gallery-item"
+
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+
+            transition={{
+              duration: 0.7,
+              delay: i * 0.1
+            }}
+
+            viewport={{ once: true }}
+          >
+
+            <div className="image-placeholder">
+              <img src={img} alt={`Gallery ${i + 1}`} />
+            </div>
+
+          </motion.div>
+
+        ))}
+
+>>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
       </div>
 
       {/* Masonry-style CSS grid */}

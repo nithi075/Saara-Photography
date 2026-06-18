@@ -1,7 +1,9 @@
 import './About.css'
 
+
 import video1 from '../../assets/about1.mp4'
 import video2 from '../../assets/about2.mp4'
+
 
 export default function About() {
 return ( <section className="about" id="about" aria-labelledby="about-heading"> <div className="about__container">
