@@ -9,7 +9,7 @@ export default function Contact() {
         <div className="contact__hero-img-wrap">
           <img
             src={contactImg}
-            alt="Srimathi Photography Contact Banner"
+            alt="Saara Photography Contact Banner"
             loading="lazy"
             className="contact__hero-img"
           />

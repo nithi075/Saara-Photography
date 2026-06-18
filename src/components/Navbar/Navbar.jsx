@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Navbar.css'
+import logo from '../../assets/logo.jpeg' 
 
 const portfolioLinks = [
   { label: 'Portraits', path: '/portfolio?category=portraits' },
@@ -127,11 +128,12 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* LOGO */}
-       <Link to="/" className="navbar__logo" aria-label="Srimathi Photography">
-  <span className="navbar__logo-text">
-    SRIMATHI PHOTOGRAPHY
-  </span>
+       <Link to="/" className="navbar__logo" aria-label="Saara Photography">
+  <img
+    src={logo}
+    alt="Saara Photography Logo"
+    className="navbar__logo-image"
+  />
 </Link>
 
         {/* RIGHT LINKS */}

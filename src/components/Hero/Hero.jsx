@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import './Hero.css'
 
-import hero1 from '../../assets/hero1.jpg'
-import hero2 from '../../assets/hero2.jpg'
-import hero3 from '../../assets/hero3.jpg'
+import hero1 from '../../assets/hero1.webp'
+import hero2 from '../../assets/hero2.png'
+import hero3 from '../../assets/hero3.webp'
 import hero4 from '../../assets/hero4.jpg'
 import hero5 from '../../assets/hero5.jpg'
 import hero6 from '../../assets/hero6.jpg'

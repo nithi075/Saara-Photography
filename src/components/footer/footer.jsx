@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Footer.css'
+import logo from '../../assets/logo.jpeg' 
 
 const portfolioLinks = [
 { label: 'Portraits', path: '/portfolio?category=portraits' },
@@ -47,12 +48,14 @@ return ( <footer className="footer"> <div className="footer__top">
 <Link
   to="/"
   className="footer__logo"
-  aria-label="Srimathi Photography — Home"
+  aria-label="Saara Photography — Home"
 >
-  <span className="footer__logo-text">
-    SRIMATHI
-    <small>PHOTOGRAPHY</small>
-  </span>
+   <img
+     src={logo}
+     alt="Saara Photography Logo"
+     className="navbar__logo-image"
+   />
+ 
 </Link>
 
 
@@ -123,7 +126,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
         {/* Facebook */}
         <a
-          href="https://www.facebook.com/Zerowattsphotography/"
+          href="https://www.facebook.com//"Saaraphotography
           className="footer__social-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -142,7 +145,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
         {/* Instagram */}
         <a
-          href="https://www.instagram.com/zerowattsphotography/"
+          href="https://www.instagram.com/saaraphotography/"
           className="footer__social-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -190,11 +193,11 @@ return ( <footer className="footer"> <div className="footer__top">
       </div>
 
       <a href="tel:+918939700777" className="footer__phone">
-        +91 89397 00777
+        +91 97867 11698
       </a>
 
       <a
-        href="https://wa.me/918939700777"
+        href="https://wa.me/919786711698"
         className="footer__whatsapp"
         target="_blank"
         rel="noopener noreferrer"
@@ -208,7 +211,7 @@ return ( <footer className="footer"> <div className="footer__top">
 
   <div className="footer__bottom">
     <p className="footer__copyright">
-      © 2026 ZEROWATTS PHOTOGRAPHY
+      © 2026 SAARA PHOTOGRAPHY
     </p>
   </div>
 </footer>
