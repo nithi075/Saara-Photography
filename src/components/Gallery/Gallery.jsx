@@ -73,133 +73,117 @@ export default function Gallery() {
     }
   }
 
-  return (
-<<<<<<< HEAD
-    <section className="gallery" id="gallery" aria-labelledby="gallery-heading">
-      <div className="gallery__header">
-        <h2 className="gallery__heading" id="gallery-heading">Selected works</h2>
-=======
-
-    <section className="gallery-section">
-
-      <h2 className="section-title">
-        VISUAL NARRATIVES
-      </h2>
-
-      {/* Instagram Link */}
-      <a
-        href="https://www.instagram.com/saaraphotography05/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="insta-link"
+ 
+return (
+  <section
+    className="gallery"
+    id="gallery"
+    aria-labelledby="gallery-heading"
+  >
+    <div className="gallery__header">
+      <h2
+        className="gallery__heading"
+        id="gallery-heading"
       >
-        @saaraphotography05
-      </a>
+        Selected Works
+      </h2>
+    </div>
 
-      {/* Gallery Grid */}
-      <div className="gallery-grid">
+    {/* Masonry-style CSS grid */}
+    <div className="gallery__grid">
+      {photos.map((photo) => (
+        <button
+          key={photo.id}
+          className="gallery__item"
+          onClick={() => openLightbox(photo)}
+          aria-label={`View photo: ${photo.alt}`}
+        >
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            loading="lazy"
+            className="gallery__img"
+          />
 
-        {images.map((img, i) => (
-
-          <motion.div
-            key={i}
-            className="gallery-item"
-
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-
-            transition={{
-              duration: 0.7,
-              delay: i * 0.1
-            }}
-
-            viewport={{ once: true }}
+          <div
+            className="gallery__item-overlay"
+            aria-hidden="true"
           >
-
-            <div className="image-placeholder">
-              <img src={img} alt={`Gallery ${i + 1}`} />
-            </div>
-
-          </motion.div>
-
-        ))}
-
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
-      </div>
-
-      {/* Masonry-style CSS grid */}
-      <div className="gallery__grid">
-        {photos.map((photo) => (
-          <button
-            key={photo.id}
-            className="gallery__item"
-            onClick={() => openLightbox(photo)}
-            aria-label={`View photo: ${photo.alt}`}
-          >
-            <img
-              src={photo.src}
-              alt={photo.alt}
-              loading="lazy"
-              className="gallery__img"
-            />
-            <div className="gallery__item-overlay" aria-hidden="true">
-              <span className="gallery__item-zoom">+</span>
-            </div>
-          </button>
-        ))}
-      </div>
+            <span className="gallery__item-zoom">
+              +
+            </span>
+          </div>
+        </button>
+      ))}
+    </div>
 
     <div className="gallery__footer">
-  <Link to="/portfolio" className="btn">
-    View Portfolio
-  </Link>
-</div>
+      <Link to="/portfolio" className="btn">
+        View Portfolio
+      </Link>
+    </div>
 
-      {/* Lightbox */}
-      {lightbox && (
-        <div
-          className="gallery__lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Photo lightbox"
+    {lightbox && (
+      <div
+        className="gallery__lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Photo lightbox"
+        onClick={closeLightbox}
+        onKeyDown={handleKeyDown}
+        tabIndex={-1}
+      >
+        <button
+          className="gallery__lightbox-close"
           onClick={closeLightbox}
-          onKeyDown={handleKeyDown}
-          tabIndex={-1}
+          aria-label="Close lightbox"
         >
-          <button
-            className="gallery__lightbox-close"
-            onClick={closeLightbox}
-            aria-label="Close lightbox"
-          >
-            ✕
-          </button>
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            className="gallery__lightbox-img"
-            onClick={(e) => e.stopPropagation()}
-          />
-          {/* Prev / Next */}
-          <button
-            className="gallery__lightbox-nav gallery__lightbox-nav--prev"
-            onClick={(e) => {
-              e.stopPropagation()
-              const idx = photos.findIndex(p => p.id === lightbox.id)
-              setLightbox(photos[(idx - 1 + photos.length) % photos.length])
-            }}
-            aria-label="Previous photo"
-          >‹</button>
-          <button
-            className="gallery__lightbox-nav gallery__lightbox-nav--next"
-            onClick={(e) => {
-              e.stopPropagation()
-              const idx = photos.findIndex(p => p.id === lightbox.id)
-              setLightbox(photos[(idx + 1) % photos.length])
-            }}
-            aria-label="Next photo"
-          >›</button>
-        </div>
-      )}
-    </section>
-  )
-}
+          ✕
+        </button>
+
+        <img
+          src={lightbox.src}
+          alt={lightbox.alt}
+          className="gallery__lightbox-img"
+          onClick={(e) => e.stopPropagation()}
+        />
+
+        <button
+          className="gallery__lightbox-nav gallery__lightbox-nav--prev"
+          onClick={(e) => {
+            e.stopPropagation()
+            const idx = photos.findIndex(
+              (p) => p.id === lightbox.id
+            )
+            setLightbox(
+              photos[
+                (idx - 1 + photos.length) %
+                  photos.length
+              ]
+            )
+          }}
+          aria-label="Previous photo"
+        >
+          ‹
+        </button>
+
+        <button
+          className="gallery__lightbox-nav gallery__lightbox-nav--next"
+          onClick={(e) => {
+            e.stopPropagation()
+            const idx = photos.findIndex(
+              (p) => p.id === lightbox.id
+            )
+            setLightbox(
+              photos[(idx + 1) % photos.length]
+            )
+          }}
+          aria-label="Next photo"
+        >
+          ›
+        </button>
+      </div>
+    )}
+  </section>
+)
+
