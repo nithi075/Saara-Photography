@@ -70,159 +70,195 @@ export default function Navbar() {
     setDropdownOpen(false)
   }, [location.pathname, location.search])
 
-  return (
-<<<<<<< HEAD
-    <header
-      className={`navbar 
-        ${scrolled ? 'navbar--scrolled' : ''} 
-        ${menuOpen ? 'navbar--open' : ''} 
-        ${isPortfolioPage ? 'navbar--solid' : ''}
-      `}
-    >
-      <div className="navbar__inner">
+ 
+return (
+  <header
+    className={`navbar
+      ${scrolled ? 'navbar--scrolled' : ''}
+      ${menuOpen ? 'navbar--open' : ''}
+      ${isPortfolioPage ? 'navbar--solid' : ''}
+    `}
+  >
+    <div className="navbar__inner">
 
-        {/* LEFT LINKS */}
-        <nav className="navbar__links navbar__links--left" aria-label="Left navigation">
-          <Link
-            to="/"
-            className={`navbar__link ${location.pathname === '/' ? 'navbar__link--active' : ''}`}
-          >
-            Home
-          </Link>
+      {/* LEFT LINKS */}
+      <nav
+        className="navbar__links navbar__links--left"
+        aria-label="Left navigation"
+      >
+        <Link
+          to="/"
+          className={`navbar__link ${
+            location.pathname === '/'
+              ? 'navbar__link--active'
+              : ''
+          }`}
+        >
+          Home
+        </Link>
 
-          <a
-            href="#about"
-            className="navbar__link"
-            onClick={(e) => handleSectionClick(e, 'about')}
-          >
-            About
-          </a>
+        <a
+          href="#about"
+          className="navbar__link"
+          onClick={(e) => handleSectionClick(e, 'about')}
+        >
+          About
+        </a>
 
-          <div
-            className={`navbar__dropdown-wrapper ${dropdownOpen ? 'navbar__dropdown-wrapper--open' : ''}`}
-            ref={dropdownRef}
-          >
-            <button
-              type="button"
-              className="navbar__link navbar__link--dropdown-trigger"
-              onClick={() => setDropdownOpen((v) => !v)}
-              aria-expanded={dropdownOpen}
-            >
-              Portfolio
-              <span className="navbar__dropdown-caret">▾</span>
-            </button>
-
-            <ul className="navbar__dropdown" role="menu">
-              {portfolioLinks.map(({ label, path }) => (
-                <li key={label} role="none">
-                  <Link
-                    to={path}
-                    role="menuitem"
-                    className="navbar__dropdown-item"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-
-       <Link to="/" className="navbar__logo" aria-label="Saara Photography">
-  <img
-    src={logo}
-    alt="Saara Photography Logo"
-    className="navbar__logo-image"
-  />
-</Link>
-
-        {/* RIGHT LINKS */}
-        <nav className="navbar__links navbar__links--right" aria-label="Right navigation">
-          <Link
-            to="/portfolio"
-            className={`navbar__link ${isPortfolioPage ? 'navbar__link--active' : ''}`}
+        <div
+          className={`navbar__dropdown-wrapper ${
+            dropdownOpen
+              ? 'navbar__dropdown-wrapper--open'
+              : ''
+          }`}
+          ref={dropdownRef}
+        >
+          <button
+            type="button"
+            className="navbar__link navbar__link--dropdown-trigger"
+            onClick={() => setDropdownOpen((v) => !v)}
+            aria-expanded={dropdownOpen}
           >
             Portfolio
-          </Link>
+            <span className="navbar__dropdown-caret">
+              ▾
+            </span>
+          </button>
 
-          <a
-            href="#contact"
-            className="navbar__link"
-            onClick={(e) => handleSectionClick(e, 'contact')}
-          >
-            Contact
-          </a>
-        </nav>
+          <ul className="navbar__dropdown" role="menu">
+            {portfolioLinks.map(({ label, path }) => (
+              <li key={label} role="none">
+                <Link
+                  to={path}
+                  role="menuitem"
+                  className="navbar__dropdown-item"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
 
-        {/* MOBILE HAMBURGER */}
-        <button
-          type="button"
-          className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
+      {/* LOGO */}
+      <Link
+        to="/"
+        className="navbar__logo"
+        aria-label="Saara Photography"
+      >
+        <img
+          src={logo}
+          alt="Saara Photography Logo"
+          className="navbar__logo-image"
+        />
+      </Link>
+
+      {/* RIGHT LINKS */}
+      <nav
+        className="navbar__links navbar__links--right"
+        aria-label="Right navigation"
+      >
+        <Link
+          to="/portfolio"
+          className={`navbar__link ${
+            isPortfolioPage
+              ? 'navbar__link--active'
+              : ''
+          }`}
         >
-          <span className="navbar__hamburger-bar" />
-          <span className="navbar__hamburger-bar" />
-          <span className="navbar__hamburger-bar" />
-        </button>
-=======
-    <nav className="navbar">
-      <div className="nav-logo">SAARA PHOTOGRAPHY</div>
-      
-      {/* Hamburger Icon */}
-      <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
-        <span></span>
-        <span></span>
->>>>>>> 4e52e60828768403d50f614b3910154a289eca5e
-      </div>
+          Portfolio
+        </Link>
 
-      {/* MOBILE MENU */}
-      <div className={`navbar__mobile-menu ${menuOpen ? 'navbar__mobile-menu--open' : ''}`}>
-        <nav className="navbar__mobile-nav">
-          <Link to="/" className="navbar__mobile-link" onClick={() => setMenuOpen(false)}>
-            Home
-          </Link>
+        <a
+          href="#contact"
+          className="navbar__link"
+          onClick={(e) => handleSectionClick(e, 'contact')}
+        >
+          Contact
+        </a>
+      </nav>
 
-          <a
-            href="#about"
-            className="navbar__mobile-link"
-            onClick={(e) => handleSectionClick(e, 'about')}
-          >
-            About
-          </a>
+      {/* MOBILE HAMBURGER */}
+      <button
+        type="button"
+        className={`navbar__hamburger ${
+          menuOpen
+            ? 'navbar__hamburger--open'
+            : ''
+        }`}
+        onClick={() => setMenuOpen((v) => !v)}
+        aria-label="Toggle menu"
+      >
+        <span className="navbar__hamburger-bar" />
+        <span className="navbar__hamburger-bar" />
+        <span className="navbar__hamburger-bar" />
+      </button>
+    </div>
 
-          <details className="navbar__mobile-dropdown">
-            <summary className="navbar__mobile-link">Portfolio</summary>
-            <ul className="navbar__mobile-sub">
-              {portfolioLinks.map(({ label, path }) => (
-                <li key={label}>
-                  <Link to={path} className="navbar__mobile-sublink">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </details>
+    {/* MOBILE MENU */}
+    <div
+      className={`navbar__mobile-menu ${
+        menuOpen
+          ? 'navbar__mobile-menu--open'
+          : ''
+      }`}
+    >
+      <nav className="navbar__mobile-nav">
+        <Link
+          to="/"
+          className="navbar__mobile-link"
+          onClick={() => setMenuOpen(false)}
+        >
+          Home
+        </Link>
 
-          {/* Corrected Second Entry to Gallery Route */}
-        
-          <a
-            href="#gallery"
-            className="navbar__mobile-link"
-            onClick={(e) => handleSectionClick(e, 'gallery')}
-          >
-            Gallery
-          </a>
-          <a
-            href="#contact"
-            className="navbar__mobile-link"
-            onClick={(e) => handleSectionClick(e, 'contact')}
-          >
-            Contact
-          </a>
-        </nav>
-      </div>
-    </header>
-  )
+        <a
+          href="#about"
+          className="navbar__mobile-link"
+          onClick={(e) => handleSectionClick(e, 'about')}
+        >
+          About
+        </a>
+
+        <details className="navbar__mobile-dropdown">
+          <summary className="navbar__mobile-link">
+            Portfolio
+          </summary>
+
+          <ul className="navbar__mobile-sub">
+            {portfolioLinks.map(({ label, path }) => (
+              <li key={label}>
+                <Link
+                  to={path}
+                  className="navbar__mobile-sublink"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        <a
+          href="#gallery"
+          className="navbar__mobile-link"
+          onClick={(e) => handleSectionClick(e, 'gallery')}
+        >
+          Gallery
+        </a>
+
+        <a
+          href="#contact"
+          className="navbar__mobile-link"
+          onClick={(e) => handleSectionClick(e, 'contact')}
+        >
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+)
 }
+
