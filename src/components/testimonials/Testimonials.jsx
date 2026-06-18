@@ -2,7 +2,7 @@
    Testimonials — 3 rotating sets of 3 reviews
    ============================================= */
 import { useState } from 'react'
-import './testimonials.css'
+import './Testimonials.css'
 
 const testimonials = [
   {
